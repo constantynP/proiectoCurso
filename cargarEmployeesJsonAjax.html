@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>CargarEmployeeJSON</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<script type="text/javascript">
+		window.onload= CargarEmployeeJSON();
+		
+		function CargarEmployeeJSON(){
+			var xhttp= new XMLHttpRequest();
+			xhttp.onreadystatechange = function() {
+			 if (this.readyState == 4 && this.status == 200) {
+       			 myObj = JSON.parse(this.responseText);
+       			 var lista= '<ul>';
+       			 for(i in myObj.employees){
+       			 	lista += (('<li>First Name:'+myObj.employees[i].firstName+'</li>')+('<li>Last Name: '+myObj.employees[i].lastName+'</li>')+('<li>Age: '+myObj.employees[i].age+'</li>'));
+       			 }
+       			 lista += '</ul>'
+       			}
+       			document.getElementById("lista").innerHTML= lista;
+			}
+			xhttp.open('GET',"employees_json.txt", true);
+			xhttp.send();
+		}
+	</script>
+</head>
+<body>
+	<p id="lista"></p>
+
+</body>
+</html>
