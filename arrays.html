@@ -1,0 +1,76 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>COSAS</title>
+
+<script type="text/javascript">
+	var vector = [ 2, "hola", 4, 5];
+
+	for(var i=0;i<vector.length;i++) {
+		console.log(vector[i]);
+	}
+
+	var j=0;
+	while (j<vector.length) {
+		console.log("while " + vector[j]);
+		j = j + 1;
+	}
+	vector[0]="adios";
+
+	var k=0;
+	do {
+		console.log("do while " + vector[k]);
+		k++;
+	}
+	while (k<vector.length)
+
+	vector.push(16);
+	vector[vector.length] = "tela";
+
+    console.log(vector);
+
+    var vector2 = vector;
+    console.log(vector);
+    console.log(vector2);
+    vector2[0]=1;
+    console.log(vector);
+    console.log(vector2);
+
+    var vector3 = [];
+	for(var i=0;i<vector.length;i++) {
+		vector3[i]=vector[i];		
+	}
+	vector3[0]= "Amazon";
+	console.log(vector);
+    console.log(vector3);
+
+    function pruebaVector(v) {
+    	v[0]=12;
+    	v[1]=76;
+		console.log(v[0]+v[1]);    	
+    }
+
+    pruebaVector(vector);
+    console.log(vector);
+
+    console.log(vector.join("%"));
+
+
+    var vector4 =vector.concat(vector3);
+    vector3[0]="PRUEBA";
+    console.log(vector);
+    console.log(vector3);
+    console.log(vector4);
+
+    var vector5 = vector4.slice(2,4);
+    vector5[0] = 12342154;
+	console.log(vector4);
+    console.log(vector5);
+
+</script>
+</head>
+<body>
+	
+</body>
+</html>
